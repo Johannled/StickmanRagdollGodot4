@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://de5xb1q71o7ri"]
+
+[ext_resource type="PackedScene" uid="uid://b8drjo3pocrem" path="res://nodes/Ragdoll.tscn" id="1_82s2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggrjj"]
+size = Vector2(1164, 224)
+
+[node name="Game" type="Node2D"]
+
+[node name="Ragdoll" parent="." instance=ExtResource("1_82s2r")]
+position = Vector2(589, 92)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2, 440)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(574, 102)
+shape = SubResource("RectangleShape2D_ggrjj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
